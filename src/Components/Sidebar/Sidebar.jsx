@@ -50,7 +50,7 @@ const Sidebar = () => {
                   ></path>
                 </svg>
               </button>
-              <div className="hidden md:inline-block">
+              <div className="hidden md:inline-block bg-red-500">
                <Dropdown/>
             </div>
             </div>
@@ -75,6 +75,9 @@ const Sidebar = () => {
       >
         <div className="h-full pb-4 overflow-y-auto bg-gray-800">
           <ul className="font-medium ">
+          <li className="inline-block md:hidden px-3">
+               <Dropdown/>
+            </li>
             <li className={`hover:bg-gray-700 px-3 py-1 ${activeSideTab==='dashboard'?'border-l-4 border-blue-500 ':''}`} onClick={() => handleSideTab('dashboard')}>
               <Link
                 to="/"
@@ -202,9 +205,7 @@ const Sidebar = () => {
                 <span className="flex-1 ms-3 whitespace-nowrap">Sign Up</span>
               </Link>
             </li>
-            <li className="inline-block md:hidden">
-               <Dropdown/>
-            </li>
+            
           </ul>
         </div>
       </aside>
