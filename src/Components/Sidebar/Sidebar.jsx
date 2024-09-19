@@ -75,7 +75,7 @@ const Sidebar = () => {
       >
         <div className="h-full pb-4 overflow-y-auto bg-gray-800">
           <ul className="font-medium ">
-          <li className="inline-block md:hidden px-3">
+          <li className="flex md:hidden pl-7 pb-5 w-full">
                <Dropdown/>
             </li>
             <li className={`hover:bg-gray-700 px-3 py-1 ${activeSideTab==='dashboard'?'border-l-4 border-blue-500 ':''}`} onClick={() => handleSideTab('dashboard')}>
