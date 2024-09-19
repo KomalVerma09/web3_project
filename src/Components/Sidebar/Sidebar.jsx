@@ -4,6 +4,8 @@ import Dropdown from "./Dropdown";
 import Buttons from './Buttons'
 const Sidebar = () => {
   const [activeSideTab, setActiveSideTab] = useState('dashboard');
+  const [isOpenMenu, setIsOpenMenu] = useState(false);
+
 
   // Handle tab click and set active tab
   const handleSideTab = (sideTab) => {
@@ -31,6 +33,7 @@ const Sidebar = () => {
                 aria-controls="logo-sidebar"
                 type="button"
                 className=" inline-flex items-center p-2 text-sm rounded-lg sm:hidden focus:outline-none focus:ring-2 text-gray-400 hover:bg-gray-700 focus:ring-gray-600"
+                onClick={()=>setIsOpenMenu(!isOpenMenu)}
               >
                 <span className="sr-only">Open sidebar</span>
                 <svg
@@ -66,8 +69,8 @@ const Sidebar = () => {
       </nav>
 
       <aside
-        id="logo-sidebar"
-        className="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full border-r sm:translate-x-0 bg-gray-800 border-gray-700"
+        className={`fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform transform sm:translate-x-0 ${isOpenMenu ? '' : '-translate-x-full'} border-r bg-gray-800 border-gray-700`
+}
         aria-label="Sidebar"
       >
         <div className="h-full pb-4 overflow-y-auto bg-gray-800">

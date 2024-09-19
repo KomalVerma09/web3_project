@@ -1,0 +1,19 @@
+/* One column layout for small screens */
+@media (max-width: 340px) {
+    .card-container {
+      grid-template-columns: 1fr !important;
+    }
+  }
+  
+  @media (min-width: 441px) and (max-width: 991px) {
+    .card-container {
+      grid-template-columns: repeat(2, 1fr) !important;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .card-container {
+      grid-template-columns: repeat(3, 1fr) !important;
+    }
+  }
+  

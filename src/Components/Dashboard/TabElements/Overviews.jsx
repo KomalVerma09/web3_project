@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './Overviews.css'
 
 import NewProject from "./NewProject"; // Assuming you already created this component
 
@@ -16,8 +17,8 @@ const Overviews = () => {
   return (
     <>
       
-        <div className="p-4 ">
-          <div className="grid grid-cols-3 gap-4 mb-4 ">
+        <div className="p-4 bg-[#111827]">
+          <div className="grid card-container gap-4 mb-4 ">
             <div
               className="flex items-center justify-center h-48 bg-gray-800 border-2 border-dashed border-gray-700 newProject cursor-pointer"
               onClick={openModal}

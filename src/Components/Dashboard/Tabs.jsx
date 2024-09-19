@@ -18,7 +18,7 @@ const Tabs = () => {
           case 'Usage_Analytics':
             return <UsageAnalytics />;
           default:
-            return <Overviews />; // Default to Overview if no tab is selected
+            return <UsageAnalytics />; // Default to Overview if no tab is selected
         }
       };
     
@@ -41,7 +41,7 @@ const Tabs = () => {
     </div>
 </nav>
 
-<div className="tab-content p-4 sm:ml-64 bg-[#111827] h-lvh">
+<div className="tab-content p-4 sm:ml-64 bg-[#111827] min-h-lvh">
         {renderTabContent()}
       </div>
 

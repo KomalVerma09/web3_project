@@ -6,9 +6,6 @@ const Dashboard = () => {
   return (
     <>
     <Tabs />
-    <div className="p-4 sm:ml-64 bg-[#111827] h-lvh">
-      <Overviews/>
-      </div>
     </>
   )
 }
