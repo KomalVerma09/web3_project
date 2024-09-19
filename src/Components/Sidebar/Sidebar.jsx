@@ -50,7 +50,7 @@ const Sidebar = () => {
                   ></path>
                 </svg>
               </button>
-              <div className="hidden md:inline-block bg-red-500">
+              <div className="hidden md:inline-block">
                <Dropdown/>
             </div>
             </div>
