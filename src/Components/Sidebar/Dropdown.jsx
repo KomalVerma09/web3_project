@@ -38,10 +38,10 @@ const Dropdown = () => {
     <>
       <button
         onClick={() => setIsOpenDropdown(!isOpenDropdown)}
-        className="text-white  font-medium border border-gray-600 text-sm px-5 py-2.5 text-center inline-flex items-center "
+        className="text-white  font-medium border smaller-than-830:border-y-0  border-gray-600 text-sm px-5 py-2.5 text-center flex justify-between items-center w-48  smaller-than-830:w-56"
         type="button"
       >
-        <div className="px-4 text-sm text-white">
+        <div className=" text-sm text-white">
           <div className="font-medium truncate">{selectProject}</div>
         </div>
         <svg
@@ -63,7 +63,7 @@ const Dropdown = () => {
       {isOpenDropdown && (
         <div
           id="dropdownInformation"
-          className="absolute z-10 shadow w-44 bg-gray-700  mt-1"
+          className="absolute z-10 shadow bg-gray-700  mt-16 w-56"
         >
           {projects.map((project, index) => (
             <button

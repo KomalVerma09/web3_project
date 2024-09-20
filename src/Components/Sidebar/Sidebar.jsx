@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Dropdown from "./Dropdown";
 import Buttons from './Buttons'
@@ -6,24 +6,30 @@ const Sidebar = () => {
   const [activeSideTab, setActiveSideTab] = useState('dashboard');
   const [isOpenMenu, setIsOpenMenu] = useState(false);
 
-
-  // Handle tab click and set active tab
+  useEffect(() => {
+    const storedTab = localStorage.getItem('activeSideTab');
+    if (storedTab) {
+      setActiveSideTab(storedTab);
+    }
+  }, []);
+  
   const handleSideTab = (sideTab) => {
     setActiveSideTab(sideTab);
+    localStorage.setItem('activeSideTab', sideTab); // Save to local storage
   };
   return (
     <>
-      <nav className="fixed top-0 z-50 w-full bg-gray-800 border-gray-700">
-        <div className="px-3 py-3 lg:px-5 lg:pl-3 ">
-          <div className="flex items-center justify-between">
+      <nav className="fixed top-0 z-50 w-full bg-gray-800">
+        <div className="px-3 h-14 lg:px-5 lg:pl-3 ">
+          <div className="flex justify-between  h-full">
             <div className="flex items-center justify-start rtl:justify-end ">
-              <Link to="https://flowbite.com" className="flex ms-2 md:me-[4.7rem] ">
+              <Link to="#" className="flex ms-2 md:me-[4.75rem] ">
                 <img
                   src="https://flowbite.com/docs/images/logo.svg"
                   className="h-10 me-3"
                   alt="FlowBite Logo"
                 />
-                <span className="self-center text-xl font-bold sm:text-2xl hidden sm:inline-block whitespace-nowrap text-white uppercase">
+                <span className="self-center text-xl font-bold md:text-2xl hidden md:inline-block whitespace-nowrap text-white uppercase">
                   Starton
                 </span>
               </Link>
@@ -32,7 +38,7 @@ const Sidebar = () => {
                 data-drawer-toggle="logo-sidebar"
                 aria-controls="logo-sidebar"
                 type="button"
-                className=" inline-flex items-center p-2 text-sm rounded-lg sm:hidden focus:outline-none focus:ring-2 text-gray-400 hover:bg-gray-700 focus:ring-gray-600"
+                className=" inline-flex items-center p-2 text-sm rounded-lg md:hidden focus:outline-none focus:ring-2 text-gray-400 hover:bg-gray-700 focus:ring-gray-600"
                 onClick={()=>setIsOpenMenu(!isOpenMenu)}
               >
                 <span className="sr-only">Open sidebar</span>
@@ -50,7 +56,7 @@ const Sidebar = () => {
                   ></path>
                 </svg>
               </button>
-              <div className="hidden md:inline-block">
+              <div className="hidden  smaller-than-830:flex  m-0 h-full border-l-4 border-blue-500">
                <Dropdown/>
             </div>
             </div>
@@ -69,15 +75,17 @@ const Sidebar = () => {
       </nav>
 
       <aside
-        className={`fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform transform sm:translate-x-0 ${isOpenMenu ? '' : '-translate-x-full'} border-r bg-gray-800 border-gray-700`
+        className={`fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform transform md:translate-x-0 ${isOpenMenu ? '' : '-translate-x-full'} border-r bg-gray-800 border-gray-700`
 }
         aria-label="Sidebar"
       >
         <div className="h-full pb-4 overflow-y-auto bg-gray-800">
           <ul className="font-medium ">
-          <li className="flex md:hidden pl-7 pb-5 w-full">
-               <Dropdown/>
-            </li>
+          <li className="flex smaller-than-830:hidden pl-7 pb-5 w-full">
+  <span className="border-l-4 border-blue-500">
+    <Dropdown />
+  </span>
+</li>
             <li className={`hover:bg-gray-700 px-3 py-1 ${activeSideTab==='dashboard'?'border-l-4 border-blue-500 ':''}`} onClick={() => handleSideTab('dashboard')}>
               <Link
                 to="/"
@@ -115,14 +123,14 @@ const Sidebar = () => {
                 <span className="flex-1 ms-3 whitespace-nowrap">Smart Contract</span>
               </Link>
             </li>
-            <li className={`hover:bg-gray-700 px-3 py-1 ${activeSideTab==='IPFS_Storage'?'border-l-4 border-blue-500 ':''}`} onClick={() => handleSideTab('IPFS_Storage')}>
+            <li className={`hover:bg-gray-700 px-3 py-1 ${activeSideTab==='Frontend_UI'?'border-l-4 border-blue-500 ':''}`} onClick={() => handleSideTab('Frontend_UI')}>
               <Link
-                to="#"
+                to="/frontend-ui"
                 className="flex items-center p-2 rounded-lg text-white group"
               >
                  
                   <svg className="flex-shrink-0 w-5 h-5 transition duration-75 text-gray-400 group-hover:text-white" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M234.5 5.7c13.9-5 29.1-5 43.1 0l192 68.6C495 83.4 512 107.5 512 134.6l0 242.9c0 27-17 51.2-42.5 60.3l-192 68.6c-13.9 5-29.1 5-43.1 0l-192-68.6C17 428.6 0 404.5 0 377.4L0 134.6c0-27 17-51.2 42.5-60.3l192-68.6zM256 66L82.3 128 256 190l173.7-62L256 66zm32 368.6l160-57.1 0-188L288 246.6l0 188z"/></svg>
-                <span className="flex-1 ms-3 whitespace-nowrap">IPFS Storage</span>
+                <span className="flex-1 ms-3 whitespace-nowrap">Frontend UI</span>
               </Link>
             </li>
             <li className={`hover:bg-gray-700 px-3 py-1 ${activeSideTab==='Monitor'?'border-l-4 border-blue-500 ':''}`} onClick={() => handleSideTab('Monitor')}>

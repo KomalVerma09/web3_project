@@ -1,13 +1,19 @@
-import React from 'react'
-import Tabs from './Tabs'
-import Overviews from './TabElements/Overviews'
+import React from 'react';
+import Tabs from '../Global/Tabs';
+import Overviews from './TabComponents/Overviews';
+import UsageAnalytics from './TabComponents/UsageAnalytics';
 
 const Dashboard = () => {
-  return (
-    <>
-    <Tabs />
-    </>
-  )
-}
+    const tabs = [
+        { name: 'Overview', label: 'Overview', component: <Overviews /> },
+        { name: 'Usage_Analytics', label: 'Usage Analytics', component: <UsageAnalytics /> }
+    ];
 
-export default Dashboard
+    return (
+        <>
+            <Tabs tabs={tabs} />
+        </>
+    );
+};
+
+export default Dashboard;
