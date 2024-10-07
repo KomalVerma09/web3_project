@@ -104,16 +104,6 @@ const Sidebar = () => {
                 <span className="ms-3">Dashboard</span>
               </Link>
             </li>
-            <li className={`hover:bg-gray-700 px-3 py-1 ${activeSideTab==='transactionManager'?'border-l-4 border-blue-500 ':''}`} onClick={() => handleSideTab('transactionManager')}>
-              <Link
-                to="/transactionManager"
-                className='flex items-center p-2 rounded-lg text-white group'
-              >
-                  <svg className="flex-shrink-0 w-5 h-5 transition duration-75 text-gray-400 group-hover:text-white" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 150.6c12.5-12.5 12.5-32.8 0-45.3l-96-96c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.7 96 32 96C14.3 96 0 110.3 0 128s14.3 32 32 32l306.7 0-41.4 41.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l96-96zm-333.3 352c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 416 416 416c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0 41.4-41.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-96 96c-12.5 12.5-12.5 32.8 0 45.3l96 96z"/></svg>
-                <span className="flex-1 ms-3 whitespace-nowrap">Transaction Manager</span>
-                
-              </Link>
-            </li>
             <li className={`hover:bg-gray-700 px-3 py-1 ${activeSideTab==='Smart_Contract'?'border-l-4 border-blue-500 ':''}`} onClick={() => handleSideTab('Smart_Contract')}>
               <Link
                 to="/smartContract"

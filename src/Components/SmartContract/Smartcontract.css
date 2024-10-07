@@ -1,0 +1,18 @@
+.style-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #374151 transparent;
+  }
+  
+ /* Custom styles for the dropdown */
+.custom-dropdown {
+  background-color: #374151;
+  color: white;
+  width: 80px;  /* Adjust the width as per your requirement */
+}
+
+/* Option specific styles */
+.custom-dropdown option {
+  background-color: #374151;
+  color: white;
+}
+
