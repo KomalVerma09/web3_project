@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import $ from "jquery";
 import "datatables.net-dt/css/dataTables.dataTables.min.css";
 import DataTable from "datatables.net-dt";
-import '../SmartContract.css'
+import '../Smartcontract.css'
 
 const Transaction = () => {
   useEffect(() => {
