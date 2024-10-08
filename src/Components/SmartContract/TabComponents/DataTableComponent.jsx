@@ -25,9 +25,11 @@ const Transaction = () => {
         { title: "Token Price" }
       ],
       destroy: true,  // Allow reinitialization
+      responsive: false,
       drawCallback: function () {
         // Add custom class to the select dropdown
         $('select').addClass('custom-dropdown');
+        $('table').addClass('myDataTable')
       }
     });
 

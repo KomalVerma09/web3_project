@@ -157,7 +157,7 @@ const NetworkSelector = () => {
           {/* Main content */}
         </div>
         </div>
-          <div className=" bg-gray-800" style={{width:'150%'}}>
+          <div className=" bg-gray-800 between450and639 w-[150%]">
             {/* <h1 className="text-3xl font-bold">PLEASE SELECT A NETWORK</h1> */}
             <Outlet />
           </div>

@@ -20,7 +20,7 @@ const NetworkDetails = () => {
   return (
     <div className="w-full h-full">
       <div className="flex flex-col">
-        <div className="flex justify-between items-center px-4 py-2 border-r border-gray-700 bg-gray-800 sm:bg-gray-900 border sm:border-0 sm:min-w-96 w-[150%] sm:w-full">
+        <div className="flex justify-between items-center px-4 py-2 border-r border-gray-700 bg-gray-800 sm:bg-gray-900 border sm:border-0 sm:min-w-96 w-[150%] sm:w-full between450and639">
           <div className="flex space-x-6">
             <button
               onClick={() => handleTabs("Interact")}

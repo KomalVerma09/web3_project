@@ -9,10 +9,25 @@
   color: white;
   width: 80px;
 }
+.myDataTable{
+  overflow-y: auto;
+}
 
 
 .custom-dropdown option {
   background-color: #374151;
   color: white;
 }
+
+.dt-layout-row{
+  display: flex !important;
+  flex-direction: row !important;
+}
+
+@media screen and (min-width: 450px) and (max-width: 639px) {
+  .between450and639 {
+    width: 123% !important;
+  }
+}
+
 
