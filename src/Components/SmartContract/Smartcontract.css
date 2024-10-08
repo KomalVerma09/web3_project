@@ -26,8 +26,12 @@
 
 @media screen and (min-width: 450px) and (max-width: 639px) {
   .between450and639 {
-    width: 123% !important;
+    width: 126% !important;
   }
 }
-
+@media (min-width: 640px) {
+  .between450and639 {
+      width: 100%;
+  }
+}
 
